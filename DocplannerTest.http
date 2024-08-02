@@ -1,0 +1,24 @@
+@DocplannerTest_HostAddress = http://localhost:5226/api
+
+GET {{DocplannerTest_HostAddress}}/slots/20240812
+
+###
+
+POST {{DocplannerTest_HostAddress}}/slots
+Content-Type: application/json
+Accept: */*
+
+{
+	"FacilityId":"e88be02d-56a8-420e-be99-eca522763221",
+	"Start":"2024-08-12 14:00:00",
+	"End":"2024-08-12 14:10:00",
+	"Comments":"Test slot",
+	"Patient":{
+		"Name":"Olek",
+		"SecondName":"Test",
+		"Email":"o.test@gmail.com",
+		"Phone":"6477780074"
+	}
+}
+
+###
