@@ -1,4 +1,4 @@
-﻿namespace DocPlannerTest.Entities;
+﻿namespace DocPlannerTest.Entities.GetAvailability;
 
 public class BusySlot
 {

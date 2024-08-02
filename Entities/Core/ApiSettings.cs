@@ -3,7 +3,7 @@
 public class ApiSettings
 {
     public const string ConfigurationSection = "ApiSettings";
-    public string BaseUrl { get; init; } = string.Empty;
-    public string Username { get; init; } = string.Empty;
-    public string Password { get; init; } = string.Empty;
+    public string BaseUrl { get; init; }
+    public string Username { get; init; }
+    public string Password { get; init; }
 }

@@ -1,15 +1,14 @@
 using DocPlannerTest.Entities.Core;
-using DocPlannerTest.Managers.Abstract;
-using DocPlannerTest.Managers.Concrete;
 using Microsoft.Extensions.Options;
 using System.Net.Http.Headers;
 using System.Text;
+using DocPlannerTest.Services.Abstract;
+using DocPlannerTest.Services.Concrete;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
-//builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddOptions<ApiSettings>()
     .BindConfiguration(ApiSettings.ConfigurationSection);
@@ -22,7 +21,7 @@ builder.Services.AddHttpClient("draliatest", (serviceProvider, httpClient) =>
     httpClient.DefaultRequestHeaders.Authorization =
         new AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
 });
-builder.Services.AddScoped<IDoctorAvailabilityManager, DoctorAvailabilityManager>();
+builder.Services.AddScoped<IDoctorAvailabilityService, DoctorAvailabilityService>();
 
 var app = builder.Build();
 

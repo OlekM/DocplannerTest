@@ -3,11 +3,11 @@ using System.Text.Json;
 using DocPlannerTest.Entities.Core;
 using DocPlannerTest.Entities.GetAvailability;
 using DocPlannerTest.Entities.TakeSlot;
-using DocPlannerTest.Managers.Abstract;
+using DocPlannerTest.Services.Abstract;
 
-namespace DocPlannerTest.Managers.Concrete;
+namespace DocPlannerTest.Services.Concrete;
 
-public class DoctorAvailabilityManager(IHttpClientFactory clientFactory) : IDoctorAvailabilityManager
+public class DoctorAvailabilityService(IHttpClientFactory clientFactory) : IDoctorAvailabilityService
 {
     private readonly HttpClient _httpClient = clientFactory.CreateClient("draliatest");
 
